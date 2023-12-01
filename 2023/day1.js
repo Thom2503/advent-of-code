@@ -28,17 +28,12 @@ const sol1 = () => {
 			return;
 		}
 		const getNum = (str) => {
-			let nums = str.split("").filter((x) => {
-				return !isNaN(x);
-			});
+			let nums = str.split("").filter((x) => !isNaN(x));
 			if (nums.length > 1) return nums[0] + nums[nums.length - 1];
 			else return nums[0] + nums[0];
 		};
-		data = data.split("\n");
 		let sum = 0;
-		data.forEach((line) => {
-			sum += Number.parseInt(getNum(line));
-		});
+		data.split("\n").forEach((line) => sum += Number.parseInt(getNum(line)));
 		console.log(sum);
 	});
 };
@@ -70,11 +65,8 @@ const sol2 = () => {
 			let num = Object.values(nums)[0].toString() + nums[Object.keys(nums)[Object.keys(nums).length - 1]].toString();
 			return num;
 		};
-		data = data.split("\n");
 		let sum = 0;
-		data.forEach((line) => {
-			sum += Number.parseInt(getNum(line));
-		});
+		data.split("\n").forEach((line) => sum += Number.parseInt(getNum(line)));
 		console.log(sum);
 	});
 };
